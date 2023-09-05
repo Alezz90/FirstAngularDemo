@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class StudentComponent {
 
   showTable: boolean = false;
+  studentTable:boolean = true;
 
  public student=[
   {'name':'name1','Email':'name1@gmail','Marks':55},
@@ -16,5 +17,6 @@ export class StudentComponent {
  ]
  ShowTable(): void {
   this.showTable = !this.showTable;
+  this.studentTable =!this.studentTable;
 }
 }

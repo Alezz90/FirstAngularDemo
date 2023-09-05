@@ -1,27 +1,41 @@
-<p>Studetn table </p>
-
-<button (click)='ShowTable()' class="btn btn-primary">student Mark</button>
+<h2 style="text-align: center; padding-top: 5px; color: cornflowerblue;">Studetn page </h2>
+<br>
+<button (click)='ShowTable()' class="btn btn-primary" style="margin-left:10px;">student Mark</button>
+<br>
+<br>
 <div class="studentTable">
+<table class="table" *ngIf='studentTable'>
+  <thead>
+  <th style="background-color: rgb(215, 139, 39);">Name</th>
+  <th style="background-color: rgb(212, 138, 40);">Email</th>  
+ </thead>
+ <tbody *ngFor="let item of student">
+<tr >
+  <td>{{item.name}}</td>
+  <td>{{item.Email}}</td>
+</tr>
+</tbody>
+</table>
+
+
 <table class="table" *ngIf='showTable'>
     <thead>
     <th style="background-color: rgb(215, 139, 39);">Name</th>
-    <th  style="background-color: rgb(212, 138, 40);">Email</th>
-    <th  style="background-color: rgb(212, 138, 40);">Mark</th>
-    <th  style="background-color: rgb(212, 138, 40);">Pass/Fail</th>
+    <th style="background-color: rgb(212, 138, 40);">Email</th>
+    <th style="background-color: rgb(212, 138, 40);">Mark</th>
+    <th style="background-color: rgb(212, 138, 40);">Pass/Fail</th>
     
    </thead>
    <tbody *ngFor="let item of student">
   <tr >
     <td>{{item.name}}</td>
     <td>{{item.Email}}</td>
-    <td [ngStyle]="{'color':(item.Marks<50) ? 'red' : ((item.Marks>= 50) ? 'green' : null)}" >{{item.Marks}}
-    </td>
+    <td [ngStyle]="{'color':(item.Marks<50) ? 'red' : ((item.Marks>= 50) ? 'green' : null)}" >{{item.Marks}}</td>
     <td *ngIf="(item.Marks>=50); else notpass" style="background-color: rgb(57, 241, 180);" >Pass</td>
     <ng-template #notpass >
       <p class="notpass">Not pass</p>
      </ng-template>
     <td *ngIf=""></td>
-    
   </tr>
   </tbody>
   </table>
