@@ -6,11 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public welocme="azza"
-  public myInput=""
- displayValue=""
+  showContainer: boolean = false;
+  HideLohin: boolean = true;
+ displayName=""
  getValue(val:string) {
   console.warn()
-  this.displayValue=val
+  this.displayName=val
+}
+HomePage(): void {
+  this.showContainer = !this.showContainer;
+  this.HideLohin =!this.HideLohin;
+ 
 }
 }
